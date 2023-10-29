@@ -1,0 +1,148 @@
+<script>
+import { ref, reactive } from 'vue'
+import CardModal from '../ModalVue.vue'
+import { storesData } from '../assets/fedasStores/storesData'
+
+export default {
+  components: {
+    CardModal
+  },
+  setup() {
+    const cards = reactive(storesData)
+    const isCardModalVisible = ref(false)
+    const selectedCard = ref(null)
+
+    const showCardModal = (card) => {
+      selectedCard.value = card
+      isCardModalVisible.value = true
+    }
+
+    const hideCardModal = () => {
+      selectedCard.value = null
+      isCardModalVisible.value = false
+    }
+
+    return {
+      cards,
+      isCardModalVisible,
+      selectedCard,
+      showCardModal,
+      hideCardModal
+    }
+  }
+}
+</script>
+
+<template>
+  <div class="container">
+    <marquee behavior="" direction="" style="color: white; font-size: 4rem; margin-bottom: 1px"
+      >WELCOME TO FEDAS STORES AND SUPERMARKET LTD
+    </marquee>
+    <div class="container-text">
+      <h2>F amd F stores and Supermarket</h2>
+      <p style="margin-bottom: 1rem; font-size: 1.5em">
+        At F&F Hotel Services, we are committed to providing an unforgettable and unparalleled
+        experience for our guests. Our mission is to be your trusted partner in hospitality,
+        ensuring your stay with us is not just comfortable but truly memorable.
+      </p>
+    </div>
+  </div>
+
+  <div class="card-container">
+    <div class="card" v-for="card in cards" :key="card.id" @click="showCardModal(card)">
+      <img :src="card.imageUrl" alt="" />
+      <p>{{ card.shortDescription }}</p>
+    </div>
+
+    <CardModal v-if="isCardModalVisible" :card="selectedCard" @close="hideCardModal" />
+  </div>
+</template>
+
+<style scoped>
+.container {
+  position: relative;
+  background-image: url('../../public/store14.jpg'); /* Replace with your background image path */
+  background-size: cover;
+  background-position: center;
+  padding: 10px;
+  height: 100vh;
+}
+
+.container::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  filter: blur(10px); /* Adjust the blur amount as needed */
+}
+.container-text {
+  color: #fff;
+  position: relative;
+  margin-top: 13%;
+  z-index: 1; /* Place text above the blurred background */
+  text-align: center; /* Center-align the text */
+}
+.container-text h1 {
+  font-size: 2.5em;
+}
+.container-text p {
+  font-size: 1.2em;
+}
+.card-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 20px;
+}
+
+.card {
+  width: 250px; /* Set a fixed width for the cards */
+  height: 300px; /* Set a fixed height for the cards */
+  border: 1px solid #ccc;
+  padding: 10px;
+  text-align: center;
+}
+.card img {
+  width: 100%;
+  height: 70%;
+  object-fit: cover;
+}
+.landing-page {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+}
+
+.background-image {
+  background-image: url('store1.jpeg');
+  background-size: cover;
+  filter: blur(1px); /* Add the blur effect to the background image */
+  width: 100%;
+  height: 100%;
+  background-position: center;
+  object-fit: contain;
+  position: absolute;
+  z-index: -1;
+}
+
+.content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: 20px;
+}
+@media (max-width: 768px) {
+  .card {
+    width: calc(50% - 20px); /* Adjust for 2 cards in a row on smaller screens */
+  }
+
+  @media (max-width: 480px) {
+    .card {
+      width: 100%; /* Full width for mobile screens */
+    }
+  }
+}
+</style>
