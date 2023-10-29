@@ -68,27 +68,24 @@ import { RouterLink } from 'vue-router'
     </div>
     <div class="footer">
       <div class="footer-item">
-        <h3>Address 1</h3>
-        <p>123 Main Street</p>
-        <p>City, State</p>
+        F&F GREENER ENGINEERING CO LTD KM 5, <br />
+        IWOROKO ROAD, OPPOSITE EKITI STATE WATER CORPORATION HEADQUARTERS, <br />
+        ADO EKITI TEL: 08132214142, 08066562376
       </div>
 
       <div class="footer-item">
-        <h3>Address 2</h3>
-        <p>456 Elm Avenue</p>
-        <p>City, State</p>
+        FEDAS AGRO ALLIED FARMS LTD BEHIND IREWOLEDE ESTATE,<br />
+        OFF ILAWE ROAD, <br />ADO EKITI, EKITI STATE
       </div>
 
       <div class="footer-item">
-        <h3>Address 3</h3>
-        <p>789 Oak Road</p>
-        <p>City, State</p>
+        KSSD HOTEL LTD ALONG NTA OFF ILAWE ROAD, <br />
+        ADO EKITI TEL: 09036321835
       </div>
 
       <div class="footer-item">
-        <h3>Address 4</h3>
-        <p>101 Pine Lane</p>
-        <p>City, State</p>
+        FEDAS WATER SERVICES LTD. <br>SHOP NO. 33/24 PURPLE STONE PLAZA <br>APO ABUJA TEL: 08069013057,
+        08132214142
       </div>
     </div>
   </div>
@@ -102,7 +99,6 @@ import { RouterLink } from 'vue-router'
   text-align: center;
   padding: 20px;
   background: #5d5d5a;
-  
 }
 
 .custom-card {
@@ -218,7 +214,7 @@ h2 {
 
 .footer-item {
   text-align: center;
-  max-width: 200px;
+  max-width: 315px;
 }
 
 .footer h3 {

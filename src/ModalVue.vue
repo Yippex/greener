@@ -56,16 +56,17 @@ export default {
 
 .close-button {
   position: absolute;
-  top: 1px;
+  top: -1px;
   right: 0px;
   background-color: transparent;
-  border: none;
+  border: 2px solid rgb(216, 55, 55);
+  border-radius: 50%; /* Add this line for the 50% border radius */
   cursor: pointer;
 }
 button{
-  font-size: 1.4em;
+  font-size: 1em;
   color: red;
-  border: 5px solid black;
+  border: 5px solid rgb(216, 55, 55);
   border-radius: 50%;
 }
 
