@@ -59,9 +59,7 @@ export default {
   </div>
   <div class="footer">
     <div class="footer-item">
-      <h3>Address 1</h3>
-      <p>123 Main Street</p>
-      <p>City, State</p>
+      <p>KSSD HOTEL LTD ALONG NTA OFF ILAWE ROAD,<br> ADO EKITI TEL: 09036321835</p>
     </div>
   </div>
 </template>
@@ -146,13 +144,13 @@ export default {
 }
 
 @media (max-width: 768px) {
-
-  .container-text h1{
+  .container-text h1 {
     font: 1.5em;
   }
-  .container-text{
+  .container-text {
     padding: 1%;
-  }  .card {
+  }
+  .card {
     width: calc(50% - 20px); /* Adjust for 2 cards in a row on smaller screens */
   }
 
@@ -172,7 +170,7 @@ export default {
 
 .footer-item {
   text-align: center;
-  max-width: 200px;
+  max-width: 500px;
 }
 
 .footer h3 {

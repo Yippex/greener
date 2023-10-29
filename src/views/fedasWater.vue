@@ -57,9 +57,10 @@ export default {
   </div>
   <div class="footer">
     <div class="footer-item">
-      <h3>Address 1</h3>
-      <p>123 Main Street</p>
-      <p>City, State</p>
+      <p>
+        FEDAS WATER SERVICES LTD. <br>SHOP NO. 33/24 PURPLE STONE PLAZA  <br>APO ABUJA TEL: 08069013057,
+        08132214142
+      </p>
     </div>
   </div>
 </template>
@@ -183,7 +184,7 @@ export default {
 
 .footer-item {
   text-align: center;
-  max-width: 200px;
+  max-width: 500px;
 }
 
 .footer h3 {

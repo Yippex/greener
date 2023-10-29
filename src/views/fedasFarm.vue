@@ -59,9 +59,9 @@ export default {
   </div>
   <div class="footer">
     <div class="footer-item">
-      <h3>Address 1</h3>
-      <p>123 Main Street</p>
-      <p>City, State</p>
+      <p>
+        FEDAS AGRO ALLIED FARMS LTD BEHIND IREWOLEDE ESTATE, <br>OFF ILAWE ROAD, <br>ADO EKITI, EKITI STATE
+      </p>
     </div>
   </div>
 </template>
@@ -145,10 +145,10 @@ export default {
   padding: 20px;
 }
 @media (max-width: 768px) {
-  .container-text h1{
+  .container-text h1 {
     font: 1.5em;
   }
-  .container-text{
+  .container-text {
     padding: 1%;
   }
   .card {
@@ -171,7 +171,7 @@ export default {
 
 .footer-item {
   text-align: center;
-  max-width: 200px;
+  max-width: 500px;
 }
 
 .footer h3 {
