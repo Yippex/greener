@@ -35,18 +35,18 @@ export default {
 
 <template>
   <div class="container">
-      <marquee behavior="" direction="" style="color: white; font-size: 3rem"
-        >WELCOME TO FEDAS WATER SERVICES LTD</marquee
-      >
-      <div class="container-text">
-        <h1>FEDAS Water Service Ltd is a leading provider of high-quality water solutions.</h1>
-        <p>
-          With a commitment to excellence and a dedication to serving communities, we offer a wide
-          range of water services and products designed to meet the needs of our customers. Our team
-          of experts is passionate about water conservation, purity, and efficient delivery.
-        </p>
-      </div>
+    <marquee behavior="" direction="" style="color: white; font-size: 3rem"
+      >WELCOME TO FEDAS WATER SERVICES LTD</marquee
+    >
+    <div class="container-text">
+      <h1>FEDAS Water Service Ltd is a leading provider of high-quality water solutions.</h1>
+      <p>
+        With a commitment to excellence and a dedication to serving communities, we offer a wide
+        range of water services and products designed to meet the needs of our customers. Our team
+        of experts is passionate about water conservation, purity, and efficient delivery.
+      </p>
     </div>
+  </div>
   <div class="card-container">
     <div class="card" v-for="card in cards" :key="card.id" @click="showCardModal(card)">
       <img :src="card.imageUrl" alt="" />
@@ -54,6 +54,13 @@ export default {
     </div>
 
     <CardModal v-if="isCardModalVisible" :card="selectedCard" @close="hideCardModal" />
+  </div>
+  <div class="footer">
+    <div class="footer-item">
+      <h3>Address 1</h3>
+      <p>123 Main Street</p>
+      <p>City, State</p>
+    </div>
   </div>
 </template>
 
@@ -83,6 +90,7 @@ export default {
   margin-top: 13%;
   z-index: 1; /* Place text above the blurred background */
   text-align: center; /* Center-align the text */
+  padding: 0 10%;
 }
 .container-text h1 {
   font-size: 2.5em;
@@ -95,6 +103,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
+  margin: 5% 5%;
 }
 
 .card {
@@ -107,7 +116,7 @@ export default {
 
 .card img {
   width: 100%;
-  height: 70%; 
+  height: 70%;
   object-fit: cover;
 }
 
@@ -140,6 +149,12 @@ export default {
 }
 
 @media (max-width: 768px) {
+  .container-text h1 {
+    font: 1.5em;
+  }
+  .container-text {
+    padding: 1%;
+  }
   .background-image {
     background-size: cover; /* You can adjust this as needed */
     object-fit: contain;
@@ -157,5 +172,27 @@ export default {
       width: 100%; /* Full width for mobile screens */
     }
   }
+}
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-item {
+  text-align: center;
+  max-width: 200px;
+}
+
+.footer h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 16px;
+  margin: 0;
 }
 </style>

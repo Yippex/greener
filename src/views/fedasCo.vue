@@ -91,6 +91,7 @@ export default {
   margin-top: 13%;
   z-index: 1; /* Place text above the blurred background */
   text-align: center; /* Center-align the text */
+  padding: 0 10%;
 }
 .container-text h1 {
   font-size: 2.5em;
@@ -143,6 +144,12 @@ export default {
   padding: 20px;
 }
 @media (max-width: 768px) {
+  .container-text h1{
+    font: 1.5em;
+  }
+  .container-text{
+    padding: 1%;
+  }
   .card {
     width: calc(50% - 20px); /* Adjust for 2 cards in a row on smaller screens */
   }

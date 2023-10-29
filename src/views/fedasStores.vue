@@ -56,6 +56,13 @@ export default {
 
     <CardModal v-if="isCardModalVisible" :card="selectedCard" @close="hideCardModal" />
   </div>
+  <div class="footer">
+    <div class="footer-item">
+      <h3>Address 1</h3>
+      <p>123 Main Street</p>
+      <p>City, State</p>
+    </div>
+  </div>
 </template>
 
 <style scoped>
@@ -84,6 +91,7 @@ export default {
   margin-top: 13%;
   z-index: 1; /* Place text above the blurred background */
   text-align: center; /* Center-align the text */
+  padding: 0 10%;
 }
 .container-text h1 {
   font-size: 2.5em;
@@ -96,6 +104,7 @@ export default {
   flex-wrap: wrap;
   justify-content: space-between;
   gap: 20px;
+  margin: 5% 5%;
 }
 
 .card {
@@ -135,6 +144,12 @@ export default {
   padding: 20px;
 }
 @media (max-width: 768px) {
+  .container-text h1 {
+    font: 1.5em;
+  }
+  .container-text {
+    padding: 1%;
+  }
   .card {
     width: calc(50% - 20px); /* Adjust for 2 cards in a row on smaller screens */
   }
@@ -144,5 +159,27 @@ export default {
       width: 100%; /* Full width for mobile screens */
     }
   }
+}
+.footer {
+  background: #333;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.footer-item {
+  text-align: center;
+  max-width: 200px;
+}
+
+.footer h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+}
+
+.footer p {
+  font-size: 16px;
+  margin: 0;
 }
 </style>

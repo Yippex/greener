@@ -12,12 +12,12 @@ export const cardsData = [
       shortDescription: 'Description for Card 2',
       imageUrl: 'tractor2.jpeg', // Add the image URL property
     },
-    {
-      id: 3,
+    // {
+    //   id: 3,
       
-      shortDescription: 'Description for Card 3',
-      imageUrl: 'tractor3.jpeg', // Add the image URL property
-    },
+    //   shortDescription: 'Description for Card 3',
+    //   imageUrl: 'tractor3.jpeg', // Add the image URL property
+    // },
     {
         id: 4,
         
