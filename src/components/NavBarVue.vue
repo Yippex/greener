@@ -1,133 +1,123 @@
 <template>
-    <div>
-      <nav class="navbar">
-        <div class="navbar-brand">
-          <a class="navbar-item" href="#">
-            My Website
-          </a>
-          <div class="navbar-burger" @click="toggleMenu">
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
-        <div class="navbar-menu" :class="{ 'is-active': menuOpen }">
-          <div class="navbar-start">
-            <a class="navbar-item" href="#">Home</a>
-            <div class="navbar-item has-dropdown is-hoverable">
-              <a class="navbar-link">Services</a>
-              <div class="navbar-dropdown">
-                <a class="navbar-item" href="#">Service 1</a>
-                <a class="navbar-item" href="#">Service 2</a>
-                <a class="navbar-item" href="#">Service 3</a>
-              </div>
-            </div>
-            <a class="navbar-item" href="#">About</a>
-            <a class="navbar-item" href="#">Contact</a>
-          </div>
-        </div>
-      </nav>
+  <nav class="navbar">
+    <div class="container">
+      <div class="brand">
+        <a href="#">Your Brand</a>
+      </div>
+      <div class="menu" :class="{ active: isMenuOpen }">
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">About</a></li>
+          <li class="dropdown">
+            <a href="#">Services</a>
+            <ul class="dropdown-menu">
+              <li><a href="#">Service 1</a></li>
+              <li><a href="#">Service 2</a></li>
+              <li><a href="#">Service 3</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Contact</a></li>
+        </ul>
+      </div>
+      <button class="menu-button" @click="toggleMenu">Menu</button>
     </div>
-  </template>
-  
-  <script>
-  export default {
-    data() {
-      return {
-        menuOpen: false
-      };
+  </nav>
+</template>
+
+<script>
+export default {
+  data() {
+    return {
+      isMenuOpen: false,
+    };
+  },
+  methods: {
+    toggleMenu() {
+      this.isMenuOpen = !this.isMenuOpen;
     },
-    methods: {
-      toggleMenu() {
-        this.menuOpen = !this.menuOpen;
-      }
-    }
-  };
-  </script>
-  
-  <style scoped>
-/* Navbar styles */
+  },
+};
+</script>
+
+<style scoped>
+/* Custom CSS for the navbar */
 .navbar {
   background-color: #333;
   color: #fff;
+  padding: 10px 0;
+}
+
+.container {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 5rem;
 }
 
-.navbar-brand {
-  padding: 10px 20px;
-}
-
-.navbar-burger {
+.brand a {
+  text-decoration: none;
   color: #fff;
-  cursor: pointer;
+  font-size: 24px;
 }
 
-.navbar-menu {
-  background-color: #333;
-  display: inline-flex;
+.menu ul {
+  list-style: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
 }
 
-.navbar-link {
-  color: #fff;
+.menu li {
+  margin-right: 20px;
+  position: relative;
 }
 
-.navbar-dropdown {
-  background-color: #333;
-}
-
-.navbar-item {
+.menu a {
+  text-decoration: none;
   color: #fff;
 }
 
-/* Active menu item */
-.navbar-item.is-active {
-  background-color: #555;
-}
-
-/* Hover effect for dropdown */
-.navbar-item.has-dropdown:hover .navbar-dropdown {
-  display: block;
-}
-
-/* Dropdown styles */
-.navbar-dropdown {
+.menu-button {
   display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  font-size: 24px;
 }
 
-/* Customize the dropdown items */
-.navbar-dropdown a {
-  color: #fff;
-  padding: 10px 20px;
-  text-decoration: none;
+/* Dropdown menu styles */
+.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  background-color: #333;
+  list-style: none;
+  padding: 10px 0;
+  width: 150px;
+}
+
+.dropdown:hover .dropdown-menu {
   display: block;
 }
 
-/* Hover effect for dropdown items */
-.navbar-dropdown a:hover {
-  background-color: #555;
-}
-
-/* Style the brand link */
-.navbar-brand a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-/* Responsive styles for mobile */
-@media screen and (max-width: 768px) {
-  .navbar-menu {
+@media (max-width: 768px) {
+  .menu {
     display: none;
+    flex-direction: column;
     position: absolute;
-    top: 100%;
+    top: 60px;
     left: 0;
-    right: 0;
+    background-color: #333;
+    width: 100%;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease-in;
   }
 
-  .navbar-menu.is-active {
+  .menu.active {
+    display: flex;
+  }
+
+  .menu-button {
     display: block;
   }
 }
