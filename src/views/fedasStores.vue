@@ -39,11 +39,10 @@ export default {
       >WELCOME TO FEDAS STORES AND SUPERMARKET LTD
     </marquee>
     <div class="container-text">
-      <h2>F amd F stores and Supermarket</h2>
+      <h2>F and F stores and Supermarket</h2>
       <p style="margin-bottom: 1rem; font-size: 1.5em">
-        At F&F Hotel Services, we are committed to providing an unforgettable and unparalleled
-        experience for our guests. Our mission is to be your trusted partner in hospitality,
-        ensuring your stay with us is not just comfortable but truly memorable.
+        A Supermarket designed to be convenient and efficient for customers. Shoppers can browse
+        the aisles and select the items they want at their own pace.
       </p>
     </div>
   </div>
