@@ -1,124 +1,115 @@
+<script>
+
+</script>
 <template>
-  <nav class="navbar">
-    <div class="container">
-      <div class="brand">
-        <a href="#">Your Brand</a>
+  <header>
+    <nav>
+      <div class="navbar">
+        <div class="logo">
+          <RouterLink to="/"><img src="/logo.png" alt=""></RouterLink>
+        </div>
+        <div>
+          <RouterLink to="/ContactForm" class="contact">Contact Us</RouterLink>
+          <div class="dropdown">
+            <button class="dropbtn">
+              Companies
+              <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content" style="color: black;">
+              <RouterLink to="/fedasCo">Engineering Co</RouterLink>
+              <RouterLink to="/fedasFarm">Agro Allied</RouterLink>
+              <RouterLink to="/fedasHotel">Hotel Services</RouterLink>
+              <RouterLink to="/fedasStores">Stores and Supermarket</RouterLink>
+              <RouterLink to="/fedasWater">F&F Water Services</RouterLink>
+              
+              
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="menu" :class="{ active: isMenuOpen }">
-        <ul>
-          <li><a href="#">Home</a></li>
-          <li><a href="#">About</a></li>
-          <li class="dropdown">
-            <a href="#">Services</a>
-            <ul class="dropdown-menu">
-              <li><a href="#">Service 1</a></li>
-              <li><a href="#">Service 2</a></li>
-              <li><a href="#">Service 3</a></li>
-            </ul>
-          </li>
-          <li><a href="#">Contact</a></li>
-        </ul>
-      </div>
-      <button class="menu-button" @click="toggleMenu">Menu</button>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
 
-<script>
-export default {
-  data() {
-    return {
-      isMenuOpen: false,
-    };
-  },
-  methods: {
-    toggleMenu() {
-      this.isMenuOpen = !this.isMenuOpen;
-    },
-  },
-};
-</script>
-
 <style scoped>
-/* Custom CSS for the navbar */
+
+.logo img{
+  width: 70px;
+  height: 70px;
+}
 .navbar {
-  background-color: #333;
-  color: #fff;
-  padding: 10px 0;
-}
-
-.container {
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+  padding: 0 8rem;
+  
 }
 
-.brand a {
+.navbar a {
+  float: left;
+  font-size: 16px;
+  color: black;
+  text-align: center;
+  padding: 14px 16px;
   text-decoration: none;
-  color: #fff;
-  font-size: 24px;
 }
 
-.menu ul {
-  list-style: none;
-  display: flex;
-  margin: 0;
-  padding: 0;
+.dropdown {
+  float: left;
+  overflow: hidden;
 }
 
-.menu li {
-  margin-right: 20px;
-  position: relative;
-}
-
-.menu a {
-  text-decoration: none;
-  color: #fff;
-}
-
-.menu-button {
-  display: none;
-  background: transparent;
+.dropdown .dropbtn {
+  font-size: 20px;
   border: none;
-  cursor: pointer;
-  color: #fff;
-  font-size: 24px;
+  outline: none;
+  color: black;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit;
+  margin: 0;
 }
 
-/* Dropdown menu styles */
-.dropdown .dropdown-menu {
+
+.dropdown:hover .dropbtn {
+  background-color: #90613f;
+}
+
+.dropdown-content {
   display: none;
   position: absolute;
-  background-color: #333;
-  list-style: none;
-  padding: 10px 0;
-  width: 150px;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
 }
 
-.dropdown:hover .dropdown-menu {
+.dropdown-content a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {
+  background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
   display: block;
 }
-
-@media (max-width: 768px) {
-  .menu {
+a{
+  text-decoration: none;
+  color: white;
+}
+@media (max-width: 789px) {
+  .navbar{
+    padding: 0 0.4rem;
+  }
+  .contact{
     display: none;
-    flex-direction: column;
-    position: absolute;
-    top: 60px;
-    left: 0;
-    background-color: #333;
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    transition: all 0.3s ease-in;
-  }
-
-  .menu.active {
-    display: flex;
-  }
-
-  .menu-button {
-    display: block;
   }
 }
 </style>
