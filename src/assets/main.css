@@ -12,3 +12,6 @@ body {
   padding: 0;
   box-sizing: border-box;
 }
+p{
+  font-size: 18px;
+}
