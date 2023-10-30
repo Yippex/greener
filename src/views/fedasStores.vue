@@ -58,9 +58,8 @@ export default {
   </div>
   <div class="footer">
     <div class="footer-item">
-      <h3>Address 1</h3>
-      <p>123 Main Street</p>
-      <p>City, State</p>
+      <p>Beside Atlas Hotel, Ikere road, Ado Ekiti</p>
+      <p>Tel. 09036321835</p>
     </div>
   </div>
 </template>
@@ -145,7 +144,7 @@ export default {
 }
 @media (max-width: 768px) {
   .container-text h1 {
-    font: 1.5em;
+    font: 1.3em;
   }
   .container-text {
     padding: 1%;
@@ -170,7 +169,7 @@ export default {
 
 .footer-item {
   text-align: center;
-  max-width: 200px;
+  max-width: 500px;
 }
 
 .footer h3 {

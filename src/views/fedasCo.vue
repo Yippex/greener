@@ -146,7 +146,7 @@ export default {
 }
 @media (max-width: 768px) {
   .container-text h1 {
-    font: 1.5em;
+    font: 1em;
   }
   .container-text {
     padding: 1%;

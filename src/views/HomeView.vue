@@ -203,6 +203,10 @@ h2 {
   .card-item {
     max-width: 400px;
   }
+  .footer{
+    flex-direction: column;
+    gap: 20px;
+  }
 }
 .footer {
   background: #333;
