@@ -87,6 +87,7 @@ import { RouterLink } from 'vue-router'
         FEDAS WATER SERVICES LTD. <br>SHOP NO. 33/24 PURPLE STONE PLAZA <br>APO ABUJA TEL: 08069013057,
         08132214142
       </div>
+      
     </div>
   </div>
 </template>
